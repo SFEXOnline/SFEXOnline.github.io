@@ -1608,3 +1608,19 @@ body::before { opacity:.045; }
   .fighter-guide-art.art-why { transform:rotate(4deg); }
   .fighter-guide-art.art-identity { transform:rotate(-1deg); }
 }
+
+/* Dispatch footer: match the breathing room used by the rest of the site */
+.dispatch-page .site-footer-rich > .container {
+  padding-top: 44px;
+}
+.dispatch-page .site-footer-rich .footer-nav {
+  margin-top: 24px;
+}
+@media (max-width:720px) {
+  .dispatch-page .site-footer-rich > .container {
+    padding-top: 38px;
+  }
+  .dispatch-page .site-footer-rich .footer-nav {
+    margin-top: 22px;
+  }
+}
