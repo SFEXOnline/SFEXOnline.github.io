@@ -88,7 +88,7 @@ if (matchStage) {
       chip: 'HYPE SET', meta: 'EX PLUS ALPHA • FEATURED',
       title: 'MasterFighterX vs Cahit',
       description: 'Short, sharp and one of the strongest matches in the SFEXOnline archive.',
-      why: 'Pure EX Plus Alpha at its best: quick, direct and a strong first taste of the game.',
+      why: 'One of the strongest short sets in our archive. Fast rounds, big swings and a clean look at how exciting EX Plus Alpha can be online.',
       youtube: 'https://www.youtube.com/watch?v=0N3A4JjT6iQ&t=7s',
       explore: 'games/ex-plus-alpha/', exploreText: 'Explore EX Plus Alpha'
     },
@@ -145,6 +145,12 @@ if (matchStage) {
   };
   videoButton.addEventListener('click', loadStagePlayer);
 
+  const warmFeaturedPosters = () => {
+    ['assets/images/match-ex2.webp','assets/images/match-ex3.webp'].forEach((src) => { const image = new Image(); image.src = src; });
+  };
+  if ('requestIdleCallback' in window) requestIdleCallback(warmFeaturedPosters, { timeout: 1800 });
+  else window.setTimeout(warmFeaturedPosters, 900);
+
   tabs.forEach((tab) => {
     tab.addEventListener('click', () => {
       const data = matchData[tab.dataset.matchKey];
@@ -154,7 +160,7 @@ if (matchStage) {
       window.setTimeout(() => {
         videoButton.replaceChildren();
         const img = document.createElement('img');
-        img.loading = 'lazy'; img.src = data.poster; img.alt = data.alt; img.setAttribute('data-match-poster','');
+        img.src = data.poster; img.alt = data.alt; img.setAttribute('data-match-poster','');
         const scan = document.createElement('span'); scan.className = 'match-stage-scan'; scan.setAttribute('aria-hidden','true');
         const play = document.createElement('span'); play.className = 'play-orb match-stage-play'; play.setAttribute('aria-hidden','true'); play.textContent = '▶';
         const chipEl = document.createElement('span'); chipEl.className = 'match-chip'; chipEl.setAttribute('data-match-chip',''); chipEl.textContent = data.chip;
