@@ -1840,3 +1840,223 @@ body::before { opacity:.045; }
   .play-ex3-status { padding:24px; }
   .play-faq-list summary { padding:21px 0; }
 }
+
+
+/* Private preview UX patch: make each game hub fulfil the homepage routes. */
+#play-online,
+#fighter-guides,
+#matches {
+  scroll-margin-top: 92px;
+}
+
+.game-route-section {
+  padding-top: 58px;
+  padding-bottom: 54px;
+  background:
+    radial-gradient(circle at 84% 45%, rgba(45,156,255,.08), transparent 22rem),
+    linear-gradient(180deg, rgba(3,8,16,.32), rgba(2,6,12,.72));
+}
+.game-route-card {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(250px,.34fr);
+  gap:clamp(30px,6vw,74px);
+  align-items:center;
+  padding:clamp(28px,4vw,44px);
+  border:1px solid rgba(69,158,255,.2);
+  border-radius:18px;
+  background:linear-gradient(135deg,rgba(8,24,45,.85),rgba(3,8,16,.96));
+  box-shadow:0 22px 58px rgba(0,0,0,.18);
+}
+.game-route-copy h2 {
+  margin:10px 0 14px;
+  font-size:clamp(2.15rem,4.6vw,4.25rem);
+  line-height:.91;
+  letter-spacing:-.052em;
+}
+.game-route-copy p {
+  max-width:760px;
+  margin:0 0 25px;
+  color:#9dacc0;
+  line-height:1.68;
+}
+.game-route-status {
+  min-height:180px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:26px;
+  border:1px solid rgba(72,162,255,.18);
+  border-radius:15px;
+  background:rgba(2,8,16,.62);
+}
+.game-route-status-label {
+  color:#718aa7;
+  font-size:.55rem;
+  font-weight:950;
+  letter-spacing:.13em;
+}
+.game-route-status strong {
+  margin-top:23px;
+  color:#edf6ff;
+  font-size:clamp(1.55rem,3vw,2.55rem);
+  line-height:.95;
+  letter-spacing:-.035em;
+}
+.game-route-status small {
+  margin-top:10px;
+  color:#73879f;
+  font-size:.59rem;
+  font-weight:850;
+  letter-spacing:.08em;
+}
+
+.game-guide-section {
+  padding-top:72px;
+  padding-bottom:72px;
+  background:linear-gradient(180deg,rgba(3,7,14,.76),rgba(2,5,10,.93));
+  border-top:1px solid rgba(75,150,240,.07);
+  border-bottom:1px solid rgba(75,150,240,.07);
+}
+.game-guide-head {
+  margin-bottom:28px;
+}
+.game-guide-head h2 {
+  margin:10px 0 0;
+  font-size:clamp(2.35rem,5vw,4.8rem);
+  line-height:.9;
+  letter-spacing:-.055em;
+}
+.game-guide-head > p {
+  max-width:560px;
+}
+.game-guide-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+.game-guide-card {
+  min-width:0;
+  display:grid;
+  grid-template-columns:minmax(190px,.44fr) minmax(0,.56fr);
+  overflow:hidden;
+  border:1px solid rgba(66,148,248,.18);
+  border-radius:17px;
+  background:linear-gradient(140deg,rgba(8,18,34,.92),rgba(3,8,15,.98));
+  transition:transform .22s ease,border-color .22s ease;
+}
+.game-guide-card:hover {
+  transform:translateY(-4px);
+  border-color:rgba(73,178,255,.35);
+}
+.game-guide-card-media {
+  display:block;
+  min-height:320px;
+  background:#02050a;
+  border-right:1px solid rgba(65,145,241,.13);
+  overflow:hidden;
+}
+.game-guide-card-media img {
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:contain;
+  background:#02050a;
+  transition:transform .28s ease;
+}
+.game-guide-card:hover .game-guide-card-media img {
+  transform:scale(1.018);
+}
+.game-guide-card-copy {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(22px,3vw,32px);
+}
+.game-guide-card-meta {
+  color:#63c8ff;
+  font-size:.56rem;
+  font-weight:950;
+  letter-spacing:.1em;
+}
+.game-guide-card h3 {
+  margin:11px 0 12px;
+  font-size:clamp(1.7rem,3vw,2.65rem);
+  line-height:.96;
+  letter-spacing:-.04em;
+}
+.game-guide-card p {
+  margin:0 0 22px;
+  color:#91a1b8;
+  line-height:1.6;
+  font-size:.87rem;
+}
+.game-guide-card .text-link {
+  margin-top:auto;
+}
+.game-guide-footer {
+  margin-top:24px;
+  display:flex;
+  justify-content:flex-end;
+}
+
+/* EX3 has no published character guide yet: show that honestly rather than a dead link. */
+.game-quick-link-disabled {
+  min-height:48px;
+  display:grid;
+  place-items:center;
+  padding:0 7px;
+  color:#65758a;
+  font-size:.54rem;
+  font-weight:950;
+  letter-spacing:.055em;
+  border-right:1px solid rgba(64,154,255,.16);
+  cursor:default;
+}
+
+@media (max-width:1000px) {
+  .game-guide-card {
+    grid-template-columns:1fr;
+  }
+  .game-guide-card-media {
+    min-height:0;
+    aspect-ratio:1/1;
+    border-right:0;
+    border-bottom:1px solid rgba(65,145,241,.13);
+  }
+}
+@media (max-width:760px) {
+  .game-route-card,
+  .game-guide-grid {
+    grid-template-columns:1fr;
+  }
+  .game-route-status {
+    min-height:0;
+  }
+  .game-guide-card {
+    grid-template-columns:minmax(130px,.42fr) minmax(0,.58fr);
+  }
+  .game-guide-card-media {
+    aspect-ratio:auto;
+    min-height:260px;
+    border-bottom:0;
+    border-right:1px solid rgba(65,145,241,.13);
+  }
+}
+@media (max-width:520px) {
+  .game-route-section { padding-top:42px; padding-bottom:42px; }
+  .game-route-card { padding:23px 20px; gap:22px; }
+  .game-route-card .btn { width:100%; text-align:center; }
+  .game-route-status { padding:20px; }
+  .game-guide-section { padding-top:52px; padding-bottom:52px; }
+  .game-guide-grid { gap:14px; }
+  .game-guide-card { grid-template-columns:1fr; }
+  .game-guide-card-media {
+    min-height:0;
+    aspect-ratio:1/1;
+    border-right:0;
+    border-bottom:1px solid rgba(65,145,241,.13);
+  }
+  .game-guide-card-copy { padding:21px; }
+  .game-guide-footer { justify-content:flex-start; }
+  .game-quick-link-disabled { min-height:44px; font-size:.48rem; }
+}
