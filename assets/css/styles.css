@@ -1749,3 +1749,94 @@ body::before { opacity:.045; }
   max-width: calc(100% - 24px);
 }
 .archive-badges .archive-badge { position: static; }
+
+/* How to Play Online — expanded resource page */
+.play-hero-expanded .play-hero-copy > p strong { color:#e7f2ff; font-weight:850; }
+.play-route-status { margin:0 0 20px; padding:12px 13px; border:1px solid rgba(68,150,244,.12); border-radius:10px; background:rgba(4,11,21,.62); }
+.play-route-status span,.play-route-status strong { display:block; }
+.play-route-status span { color:#54739c; font-size:.51rem; font-weight:950; letter-spacing:.12em; }
+.play-route-status strong { margin-top:5px; color:#b8c8da; font-size:.7rem; line-height:1.35; }
+.play-route-status-building { border-color:rgba(238,167,62,.13); }
+.play-route-status-building span { color:#a98550; }
+
+.play-ark-section { padding-top:100px; padding-bottom:100px; background:radial-gradient(circle at 76% 42%,rgba(49,158,255,.09),transparent 28rem),#02050a; }
+.play-ark-shell { overflow:hidden; display:grid; grid-template-columns:minmax(0,1fr) minmax(360px,.72fr); border:1px solid rgba(69,157,255,.22); border-radius:19px; background:linear-gradient(135deg,rgba(7,22,42,.95),rgba(3,8,15,.99)); box-shadow:0 32px 80px rgba(0,0,0,.22); }
+.play-ark-copy { padding:clamp(36px,5.4vw,68px); }
+.play-ark-copy h2 { margin:12px 0 24px; font-size:clamp(3rem,6vw,5.8rem); line-height:.86; letter-spacing:-.06em; }
+.play-ark-copy p { max-width:790px; margin:0 0 16px; color:#96a7bd; line-height:1.72; }
+.play-ark-copy p strong { color:#d9e8f8; }
+.play-ark-actions { margin-top:30px; }
+.play-ark-panel { display:flex; flex-direction:column; border-left:1px solid rgba(69,157,255,.15); background:linear-gradient(160deg,rgba(6,16,31,.94),rgba(2,6,12,.98)); }
+.play-ark-panel-head { display:flex; justify-content:space-between; gap:15px; padding:17px 19px; border-bottom:1px solid rgba(69,157,255,.12); color:#6983a6; font-size:.55rem; font-weight:950; letter-spacing:.11em; }
+.play-ark-panel-head b { color:#68c9ff; }
+.play-ark-feature { display:grid; grid-template-columns:44px 1fr; gap:14px; align-items:start; padding:24px 20px; border-bottom:1px solid rgba(69,157,255,.09); }
+.play-ark-feature > span { display:grid; place-items:center; width:34px; height:34px; border:1px solid rgba(75,169,255,.22); border-radius:50%; color:#64c8ff; font-size:.55rem; font-weight:950; }
+.play-ark-feature strong,.play-ark-feature small { display:block; }
+.play-ark-feature strong { font-size:.88rem; letter-spacing:.02em; }
+.play-ark-feature small { margin-top:7px; color:#7e91aa; font-size:.72rem; line-height:1.55; }
+.play-ark-support { margin:auto 20px 20px; padding:15px 16px; border:1px solid rgba(238,167,62,.18); border-radius:10px; color:#e7c58c; text-decoration:none; font-size:.62rem; font-weight:950; letter-spacing:.07em; text-align:center; }
+.play-ark-support:hover { border-color:rgba(238,167,62,.4); color:#ffd797; }
+
+.play-before-grid-five { grid-template-columns:repeat(5,minmax(0,1fr)); }
+.play-before-grid-five .play-before-card { min-height:270px; padding:22px; }
+.play-before-grid-five .play-before-card h3 { margin-top:40px; font-size:1.25rem; }
+.play-legal-note { margin-top:18px; padding:18px 20px; border:1px solid rgba(238,167,62,.16); border-radius:12px; background:rgba(38,24,7,.18); color:#9aabbe; font-size:.78rem; line-height:1.65; }
+.play-legal-note strong { color:#efb555; }
+
+.play-guide-actions { display:flex; flex-wrap:wrap; gap:18px; align-items:center; }
+.play-inline-link { color:#72cfff; text-decoration:none; font-size:.66rem; font-weight:950; letter-spacing:.06em; }
+.play-inline-link:hover { color:#b8e9ff; }
+
+.play-game-steps-section { padding-top:88px; padding-bottom:88px; background:#03060c; }
+.play-game-steps-alt { background:linear-gradient(180deg,rgba(5,13,24,.78),rgba(2,6,12,.88)); }
+.play-game-step { display:grid; grid-template-columns:minmax(360px,.7fr) minmax(0,1fr); gap:clamp(42px,8vw,110px); align-items:center; }
+.play-game-step-head { display:grid; grid-template-columns:52px 1fr; gap:18px; align-items:start; }
+.play-game-step-head > span { display:grid; place-items:center; width:44px; height:44px; border:1px solid rgba(65,159,255,.24); border-radius:50%; color:#65c7ff; font-size:.62rem; font-weight:950; }
+.play-game-step-head h2 { margin:10px 0 0; font-size:clamp(2.5rem,5.2vw,4.9rem); line-height:.88; letter-spacing:-.055em; }
+.play-game-step-body { padding:30px; border:1px solid rgba(67,148,242,.15); border-radius:16px; background:linear-gradient(150deg,rgba(8,18,34,.82),rgba(3,8,14,.94)); }
+.play-game-step-body > p { margin:0; color:#9aabc0; line-height:1.75; }
+.play-game-step-actions { display:flex; flex-wrap:wrap; gap:14px; align-items:center; margin-top:26px; }
+
+.play-ex3-section { padding-top:100px; padding-bottom:100px; background:radial-gradient(circle at 82% 50%,rgba(77,126,194,.1),transparent 25rem),#02050a; }
+.play-ex3-shell { display:grid; grid-template-columns:minmax(0,1fr) minmax(330px,.48fr); gap:clamp(42px,8vw,100px); align-items:center; }
+.play-ex3-copy h2 { margin:12px 0 22px; font-size:clamp(2.8rem,5.7vw,5.4rem); line-height:.87; letter-spacing:-.06em; }
+.play-ex3-copy p { max-width:800px; margin:0 0 17px; color:#96a7bc; line-height:1.72; }
+.play-ex3-status { padding:30px; border:1px solid rgba(100,145,205,.2); border-radius:16px; background:linear-gradient(145deg,rgba(9,25,45,.87),rgba(3,8,15,.96)); }
+.play-ex3-status > span { color:#6b8cad; font-size:.56rem; font-weight:950; letter-spacing:.12em; }
+.play-ex3-status strong { display:block; margin-top:34px; color:#d4e4f3; font-size:clamp(1.65rem,3vw,2.65rem); line-height:.93; letter-spacing:-.04em; }
+.play-ex3-status p { margin:18px 0 0; color:#7f91a8; font-size:.78rem; line-height:1.6; }
+
+.play-faq-section { padding-top:100px; padding-bottom:105px; background:linear-gradient(180deg,#03060c,#02050a); }
+.play-faq-list { border-top:1px solid rgba(68,149,242,.16); }
+.play-faq-list details { border-bottom:1px solid rgba(68,149,242,.13); }
+.play-faq-list summary { list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:24px 2px; color:#d9e7f5; font-size:clamp(1rem,1.6vw,1.22rem); font-weight:850; }
+.play-faq-list summary::-webkit-details-marker { display:none; }
+.play-faq-list summary span { flex:0 0 auto; color:#5fc6ff; font-size:1.4rem; font-weight:400; transition:transform .2s ease; }
+.play-faq-list details[open] summary span { transform:rotate(45deg); }
+.play-faq-list details > div { padding:0 0 25px; }
+.play-faq-list details p { max-width:960px; margin:0; color:#8fa1b7; line-height:1.72; }
+
+@media (max-width:1100px) {
+  .play-before-grid-five { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .play-before-grid-five .play-before-card:last-child { grid-column:1 / -1; }
+}
+@media (max-width:900px) {
+  .play-ark-shell { grid-template-columns:1fr; }
+  .play-ark-panel { border-left:0; border-top:1px solid rgba(69,157,255,.15); }
+  .play-game-step,.play-ex3-shell { grid-template-columns:1fr; }
+}
+@media (max-width:620px) {
+  .play-before-grid-five { grid-template-columns:1fr; }
+  .play-before-grid-five .play-before-card:last-child { grid-column:auto; }
+  .play-before-grid-five .play-before-card { min-height:0; }
+  .play-ark-copy { padding:30px 22px; }
+  .play-ark-panel-head { flex-direction:column; }
+  .play-game-step { gap:26px; }
+  .play-game-step-head { grid-template-columns:40px 1fr; gap:13px; }
+  .play-game-step-head > span { width:36px; height:36px; }
+  .play-game-step-body { padding:22px; }
+  .play-game-step-actions { align-items:stretch; flex-direction:column; }
+  .play-game-step-actions .btn { width:100%; text-align:center; }
+  .play-ex3-status { padding:24px; }
+  .play-faq-list summary { padding:21px 0; }
+}
