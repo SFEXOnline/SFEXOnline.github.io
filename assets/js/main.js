@@ -42,7 +42,9 @@ const applyArchiveFilter = (value) => {
   });
   let visibleCount = 0;
   matches.forEach((card) => {
-    const hidden = value !== 'all' && card.dataset.game !== value;
+    const hidden = value === 'must-see'
+      ? card.dataset.mustSee !== 'true'
+      : value !== 'all' && card.dataset.game !== value;
     card.hidden = hidden;
     if (!hidden) visibleCount += 1;
   });
@@ -54,8 +56,11 @@ filters.forEach((button) => {
 });
 
 if (filters.length && matches.length) {
-  const requestedGame = new URLSearchParams(window.location.search).get('game');
-  if (['expa','ex2','ex3'].includes(requestedGame)) applyArchiveFilter(requestedGame);
+  const params = new URLSearchParams(window.location.search);
+  const requestedView = params.get('view');
+  const requestedGame = params.get('game');
+  if (requestedView === 'must-see') applyArchiveFilter('must-see');
+  else if (['expa','ex2','ex3'].includes(requestedGame)) applyArchiveFilter(requestedGame);
 }
 
 document.querySelectorAll('.lite-video:not(.match-stage-video)').forEach((button) => {

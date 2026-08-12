@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Replace with your final domain before launch.
 Sitemap: https://sfexonline.com/sitemap.xml

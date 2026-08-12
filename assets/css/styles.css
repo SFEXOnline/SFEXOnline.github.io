@@ -1727,3 +1727,25 @@ body::before { opacity:.045; }
 @media (prefers-reduced-motion:reduce) {
   .guide-library-card,.guide-library-image img,.guide-match-art img,.guide-neighbour-link { transition:none; }
 }
+
+
+/* Pre-launch polish: designed match artwork should never be cropped. */
+.game-feature-media img,
+.fighter-feature-media img,
+.ex2-guide-media img {
+  object-fit: contain;
+  background: #000;
+}
+
+/* Archive cards may carry a maximum of two useful badges without crowding. */
+.archive-badges {
+  position: absolute;
+  z-index: 3;
+  left: 12px;
+  bottom: 11px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-width: calc(100% - 24px);
+}
+.archive-badges .archive-badge { position: static; }
