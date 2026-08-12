@@ -2135,3 +2135,92 @@ body::before { opacity:.045; }
   .about-support-shell { padding:27px 21px 29px; }
   .about-support-action { width:100%; }
 }
+
+
+/* Private Preview UX #2 — clearer game-to-guide relationship */
+.guide-filter-bar {
+  display:flex;
+  gap:10px;
+  margin:0 0 24px;
+  padding-bottom:2px;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.guide-filter-bar::-webkit-scrollbar { display:none; }
+.guide-filter {
+  flex:0 0 auto;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  min-height:42px;
+  padding:0 16px;
+  border:1px solid rgba(65,154,255,.22);
+  border-radius:999px;
+  background:rgba(4,11,20,.84);
+  color:#9aacc2;
+  font:inherit;
+  font-size:.68rem;
+  font-weight:900;
+  letter-spacing:.085em;
+  cursor:pointer;
+  transition:border-color .2s ease,background .2s ease,color .2s ease,transform .2s ease;
+}
+.guide-filter span {
+  display:grid;
+  place-items:center;
+  min-width:22px;
+  height:22px;
+  padding:0 6px;
+  border-radius:999px;
+  background:rgba(255,255,255,.055);
+  color:#71839a;
+  font-size:.58rem;
+  letter-spacing:0;
+}
+.guide-filter:hover,.guide-filter:focus-visible {
+  color:#d9ebf9;
+  border-color:rgba(75,188,255,.48);
+  outline:none;
+}
+.guide-filter.is-active {
+  color:#03101b;
+  border-color:#38b8ff;
+  background:linear-gradient(135deg,#54c8ff,#168fff);
+  box-shadow:0 10px 28px rgba(0,130,255,.16);
+}
+.guide-filter.is-active span {
+  color:#06213a;
+  background:rgba(0,14,27,.14);
+}
+.guide-library-card[hidden] { display:none !important; }
+.guide-library-game {
+  align-self:flex-start;
+  display:inline-flex;
+  align-items:center;
+  min-height:27px;
+  padding:0 10px;
+  border:1px solid rgba(68,183,255,.3);
+  border-radius:999px;
+  background:rgba(32,144,226,.09);
+  color:#55c5ff !important;
+  font-size:.63rem !important;
+  font-weight:950 !important;
+  letter-spacing:.105em !important;
+}
+.guide-library-number {
+  margin-top:7px;
+  color:#70869f !important;
+  font-size:.58rem !important;
+  font-weight:900 !important;
+  letter-spacing:.095em !important;
+}
+.guide-library-meta .guide-library-game + strong { margin-top:12px; }
+
+@media (max-width:640px) {
+  .guide-filter-bar { margin-right:-18px; padding-right:18px; }
+  .guide-filter { min-height:40px; padding:0 14px; font-size:.64rem; }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .guide-filter { transition:none; }
+}
