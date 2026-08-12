@@ -198,3 +198,76 @@ if (dispatchFormSecondary && dispatchSuccessSecondary) {
     }, 180);
   });
 }
+
+// EX Fighter Guide: lazy-load and loop short gameplay examples only when they are near the viewport.
+const guideVideoShells = document.querySelectorAll('[data-guide-video-shell]');
+if (guideVideoShells.length) {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  guideVideoShells.forEach((shell) => {
+    const video = shell.querySelector('[data-guide-loop-video]');
+    const source = video?.querySelector('source[data-src]');
+    const playButton = shell.querySelector('[data-video-toggle]');
+    const soundButton = shell.querySelector('[data-sound-toggle]');
+    if (!video || !source) return;
+
+    let loaded = false;
+    let manualPaused = prefersReducedMotion;
+
+    const loadVideo = () => {
+      if (loaded) return;
+      source.src = source.dataset.src;
+      video.load();
+      loaded = true;
+    };
+
+    const setPlayLabel = () => {
+      if (playButton) playButton.textContent = video.paused ? 'PLAY' : 'PAUSE';
+    };
+
+    const playVideo = () => {
+      loadVideo();
+      video.play().then(setPlayLabel).catch(() => setPlayLabel());
+    };
+
+    if (playButton) {
+      playButton.textContent = prefersReducedMotion ? 'PLAY' : 'PAUSE';
+      playButton.addEventListener('click', () => {
+        loadVideo();
+        if (video.paused) {
+          manualPaused = false;
+          playVideo();
+        } else {
+          manualPaused = true;
+          video.pause();
+          setPlayLabel();
+        }
+      });
+    }
+
+    if (soundButton) {
+      soundButton.addEventListener('click', () => {
+        loadVideo();
+        video.muted = !video.muted;
+        soundButton.textContent = video.muted ? 'SOUND OFF' : 'SOUND ON';
+        soundButton.setAttribute('aria-label', video.muted ? 'Turn gameplay sound on' : 'Turn gameplay sound off');
+      });
+    }
+
+    const guideVideoObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          loadVideo();
+          if (!manualPaused) playVideo();
+        } else if (!video.paused) {
+          video.pause();
+          setPlayLabel();
+        }
+      });
+    }, { rootMargin: '260px 0px', threshold: 0.14 });
+
+    guideVideoObserver.observe(shell);
+    video.addEventListener('play', setPlayLabel);
+    video.addEventListener('pause', setPlayLabel);
+  });
+}
